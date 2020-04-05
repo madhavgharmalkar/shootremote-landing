@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Montserrat-ExtraBold
+font link: https://fonts.google.com/specimen/Montserrat
+font author: Julieta Ulanovsky
+font author site: http://www.zkysky.com.ar/
+
+
+icon designer: Mike Rowe
+icon designer link: /itsmikerowe
+        
+{"bg-gradient-0":"#51A4FB","bg-gradient-1":"#51A4FB","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      
