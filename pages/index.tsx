@@ -19,6 +19,7 @@ import { scroller } from "react-scroll";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { WidthWrapper } from "../components/WidthWrapper";
+import { encodeForm } from "../helpers/encodeForm";
 
 const Home: FC = () => {
   const size = useContext(ResponsiveContext);
@@ -91,7 +92,22 @@ const Home: FC = () => {
                     onChange={setValue}
                     data-netlify="true"
                     name="beta-signup"
-                    onSubmit={(values: any) => console.log(values)}
+                    onSubmit={(event: any) => {
+                      const values = event.value;
+                      fetch("/", {
+                        method: "POST",
+                        headers: {
+                          "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: encodeForm({
+                          "form-name": "beta-signup",
+                          ...values,
+                        }),
+                      })
+                        .then(() => alert("Success!"))
+                        .catch((error) => alert(error));
+                      event.preventDefault();
+                    }}
                   >
                     <FormField name="name" required>
                       <TextInput placeholder="Name" name="name" />
