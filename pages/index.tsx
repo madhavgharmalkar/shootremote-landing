@@ -59,7 +59,10 @@ const Home: FC = () => {
                 primary
                 onClick={() => scroller.scrollTo("sign-up", {})}
               />
-              <Button label="Learn More" />
+              <Button
+                label="Learn More"
+                onClick={() => scroller.scrollTo("what", {})}
+              />
             </Box>
           </Box>
           <Box gridArea="right">
@@ -154,7 +157,7 @@ const Home: FC = () => {
                   <FormField name="name" required>
                     <TextInput type="email" placeholder="Email" name="email" />
                   </FormField>
-                  <FormField name="camera">
+                  {/* <FormField name="camera">
                     <Select
                       placeholder="Camera Brand"
                       name="camera"
@@ -167,7 +170,7 @@ const Home: FC = () => {
                         "Other",
                       ]}
                     />
-                  </FormField>
+                  </FormField> */}
 
                   <Button label="Submit" type="submit" />
                 </Form>

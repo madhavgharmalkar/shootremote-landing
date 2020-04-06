@@ -32,8 +32,8 @@ export const Header: FC = () => {
         <Image src="/logo-color.svg" height={28} alt="ShootRemote logo" />
         {!headerIsSmall && (
           <Nav direction="row" gap="medium">
-            <Anchor label="About" />
-            <Anchor label="Contact" />
+            <Anchor label="About" href="#what" />
+            <Anchor label="Contact" href="sign-up" />
           </Nav>
         )}
         {headerIsSmall && <SideNav />}
