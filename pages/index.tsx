@@ -34,6 +34,9 @@ const Home: FC = () => {
   const [value, setValue] = useState({});
   return (
     <Box pad={{ horizontal: "large" }}>
+      <Head>
+        <title>ShootRemote | Control Your Camera Remotely</title>
+      </Head>
       <WidthWrapper>
         <Grid
           fill
