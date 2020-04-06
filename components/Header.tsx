@@ -33,7 +33,7 @@ export const Header: FC = () => {
         {!headerIsSmall && (
           <Nav direction="row" gap="medium">
             <Anchor label="About" href="#what" />
-            <Anchor label="Contact" href="sign-up" />
+            <Anchor label="Contact" href="#sign-up" />
           </Nav>
         )}
         {headerIsSmall && <SideNav />}
