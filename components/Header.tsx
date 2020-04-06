@@ -6,6 +6,8 @@ import {
   Image,
   ResponsiveContext,
   DropButton,
+  Nav,
+  Anchor,
 } from "grommet";
 import { Menu } from "grommet-icons";
 import { WidthWrapper } from "./WidthWrapper";
@@ -19,16 +21,16 @@ export const Header: FC = () => {
     <GrommetHeader
       pad={{
         horizontal: "large",
-        vertical: headerIsSmall ? "large" : "small",
+        vertical: size === "small" ? "large" : "small",
       }}
     >
       <WidthWrapper align="center">
         <Image src="/logo-color.svg" height={28} />
         {!headerIsSmall && (
-          <Box direction="row" gap="small">
-            <Button label="About" />
-            <Button label="Contact" />
-          </Box>
+          <Nav direction="row" gap="medium">
+            <Anchor label="About" />
+            <Anchor label="Contact" />
+          </Nav>
         )}
         {headerIsSmall && <SideNav />}
       </WidthWrapper>

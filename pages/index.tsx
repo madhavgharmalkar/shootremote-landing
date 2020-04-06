@@ -13,11 +13,12 @@ import {
   FormField,
   TextInput,
   Select,
+  Diagram,
+  Stack,
+  List,
 } from "grommet";
 import { scroller } from "react-scroll";
 
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
 import { WidthWrapper } from "../components/WidthWrapper";
 import { encodeForm } from "../helpers/encodeForm";
 
@@ -132,6 +133,98 @@ const Home: FC = () => {
                 </Form>
               </Box>
             </Box>
+          </Grid>
+        </WidthWrapper>
+      </Box>
+
+      <Box>
+        <WidthWrapper direction="column">
+          <Heading level={2}>How does ShootRemote work?</Heading>
+          <Grid
+            columns={columns}
+            rows={rows}
+            areas={areas}
+            fill="horizontal"
+            gap="medium"
+          >
+            <Box gridArea="left">
+              <Paragraph>
+                ShootRemote works by connecting you to your camera through a
+                couple of devices. It first connects to you through your device,
+                wether it be a phone, tablet, or computer,
+                <Text weight="bold">
+                  &nbsp;ShootRemote is designed to work on any platform.
+                </Text>
+              </Paragraph>
+              <Paragraph>
+                ShootRemote connects to your camera through the&nbsp;
+                <Text weight="bold">ShootRemote Adapter.</Text> Depending on the
+                camera, the ShootRemote Adapter may connect to it with a wire,
+                or wirelessly
+              </Paragraph>
+            </Box>
+            <Box gridArea="right">
+              <Paragraph>
+                Your ShootRemote Adapter can connect to your device in several
+                ways:
+                <ul>
+                  <li>
+                    You can connect directly and wirelessly to the ShootRemote
+                    Adapter from any device
+                  </li>
+                  <li>
+                    You can connect to multiple ShootRemote Adapters by
+                    connecting through a wireless network (similar to how your
+                    home WiFi works)
+                  </li>
+                  <li>
+                    You can connect to multiple ShootRemote Adapters over long
+                    distances (about 1 mile) with the ShootRemote Station.
+                  </li>
+                </ul>
+              </Paragraph>
+            </Box>
+            {/* <Box gridArea="right">
+              <Stack guidingChild={1}>
+                <Diagram
+                  connections={[
+                    {
+                      fromTarget: "works-1",
+                      toTarget: "works-2",
+                      thickness: "xxsmall",
+                      color: "accent-4",
+                    },
+                  ]}
+                />
+                <Box>
+                  <Box
+                    align="center"
+                    fill="horizontal"
+                    id="works-1"
+                    margin="medium"
+                  >
+                    <Image src="/devices.svg" width="100px" />
+                  </Box>
+                  <Box
+                    align="center"
+                    fill="horizontal"
+                    id="works-2"
+                    margin="medium"
+                  >
+                    <Image src="/devices.svg" width="100px" />
+                  </Box>
+                  <Box
+                    align="center"
+                    fill="horizontal"
+                    id="works-3"
+                    margin="medium"
+                  >
+                    <Image src="/devices.svg" width="100px" />
+                  </Box>
+                </Box>
+              </Stack>
+            </Box>
+           */}
           </Grid>
         </WidthWrapper>
       </Box>
