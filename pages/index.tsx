@@ -96,8 +96,8 @@ const Home: FC = () => {
               <Text>
                 ShootRemote is a tool designed to let you create productively.
                 It was created to allow creators to quickly check and change
-                camera settings whithout having to be interuppted. ShootRemote
-                is an excellent tool for:
+                their DSLR, mirrorless, and film camera settings whithout having
+                to be interuppted. ShootRemote is an excellent tool for:
               </Text>
               <Image src="/camera.svg" height="100px" />
             </Box>

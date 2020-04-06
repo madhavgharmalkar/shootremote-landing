@@ -22,7 +22,7 @@ class MyDocument extends Document {
           />
           <meta
             name="keywords"
-            content="dslr,camera,remote,api,mirrorless,api"
+            content="dslr,camera,remote,api,mirrorless,api,sony,RED"
           />
           <meta
             name="viewport"
