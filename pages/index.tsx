@@ -65,6 +65,12 @@ const Home: FC = () => {
         </Grid>
       </WidthWrapper>
 
+      {/* <Box id="id">
+        <WidthWrapper>
+          <Heading level="2">What is ShootRemote?</Heading>
+        </WidthWrapper>
+      </Box> */}
+
       <Box id="sign-up">
         <WidthWrapper>
           <Grid
@@ -137,7 +143,7 @@ const Home: FC = () => {
         </WidthWrapper>
       </Box>
 
-      <Box>
+      <Box id="how-does-it-work">
         <WidthWrapper direction="column">
           <Heading level={2}>How does ShootRemote work?</Heading>
           <Grid
@@ -167,22 +173,22 @@ const Home: FC = () => {
               <Paragraph>
                 Your ShootRemote Adapter can connect to your device in several
                 ways:
-                <ul>
-                  <li>
-                    You can connect directly and wirelessly to the ShootRemote
-                    Adapter from any device
-                  </li>
-                  <li>
-                    You can connect to multiple ShootRemote Adapters by
-                    connecting through a wireless network (similar to how your
-                    home WiFi works)
-                  </li>
-                  <li>
-                    You can connect to multiple ShootRemote Adapters over long
-                    distances (about 1 mile) with the ShootRemote Station.
-                  </li>
-                </ul>
               </Paragraph>
+              <ul>
+                <li>
+                  You can connect directly and wirelessly to the ShootRemote
+                  Adapter from any device
+                </li>
+                <li>
+                  You can connect to multiple ShootRemote Adapters by connecting
+                  through a wireless network (similar to how your home WiFi
+                  works)
+                </li>
+                <li>
+                  You can connect to multiple ShootRemote Adapters over long
+                  distances (about 1 mile) with the ShootRemote Station.
+                </li>
+              </ul>
             </Box>
             {/* <Box gridArea="right">
               <Stack guidingChild={1}>
