@@ -18,7 +18,7 @@ class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="Control your camera wirelessly with SmartRemote"
+            content="Control your camera remotely with SmartRemote"
           />
           <meta
             name="keywords"
@@ -28,6 +28,13 @@ class MyDocument extends Document {
             name="viewport"
             content="initial-scale=1.0, width=device-width"
             key="viewport"
+          />
+
+          <meta property="og:url" content="https://shootremote.com" />
+          <meta property="og:type" content="article" />
+          <meta
+            property="og:image"
+            content="https://shootremote.com/default.png"
           />
         </Head>
         <body>
