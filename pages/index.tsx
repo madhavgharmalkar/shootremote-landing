@@ -68,11 +68,38 @@ const Home: FC = () => {
         </Grid>
       </WidthWrapper>
 
-      {/* <Box id="id">
-        <WidthWrapper>
+      <Box id="what" margin="medium">
+        <WidthWrapper direction="column">
           <Heading level="2">What is ShootRemote?</Heading>
+          <Grid
+            rows={rows}
+            columns={columns}
+            areas={areas}
+            gap="medium"
+            align="center"
+            justify="center"
+          >
+            <Box gridArea="left">
+              <Paragraph>
+                ShootRemote is a tool designed to let you create productively.
+                It was created to allow creators to quickly check and change
+                camera settings whithout having to be interuppted. ShootRemote
+                is an excellent tool for:
+              </Paragraph>
+            </Box>
+            <Box gridArea="right">
+              <List
+                data={[
+                  "Multi-camera broadcasting",
+                  "Drone Photography/Videography",
+                  "Remote Camera Work",
+                  "...and much more!",
+                ]}
+              />
+            </Box>
+          </Grid>
         </WidthWrapper>
-      </Box> */}
+      </Box>
 
       <Box id="sign-up">
         <WidthWrapper>
@@ -146,7 +173,7 @@ const Home: FC = () => {
         </WidthWrapper>
       </Box>
 
-      <Box id="how-does-it-work">
+      <Box id="how-does-it-work" margin="medium">
         <WidthWrapper direction="column">
           <Heading level={2}>How does ShootRemote work?</Heading>
           <Grid
