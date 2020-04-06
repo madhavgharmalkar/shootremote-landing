@@ -82,17 +82,17 @@ const Home: FC = () => {
             rows={rows}
             columns={columns}
             areas={areas}
-            gap="medium"
+            gap="large"
             align="center"
-            justify="center"
           >
             <Box gridArea="left">
-              <Paragraph>
+              <Text>
                 ShootRemote is a tool designed to let you create productively.
                 It was created to allow creators to quickly check and change
                 camera settings whithout having to be interuppted. ShootRemote
                 is an excellent tool for:
-              </Paragraph>
+              </Text>
+              <Image src="/camera.svg" height="100px" />
             </Box>
             <Box gridArea="right">
               <List
@@ -108,7 +108,7 @@ const Home: FC = () => {
         </WidthWrapper>
       </Box>
 
-      <Box id="sign-up">
+      <Box id="sign-up" margin="medium">
         <WidthWrapper>
           <Grid
             fill
@@ -127,7 +127,7 @@ const Home: FC = () => {
               </Text>
             </Box>
             <Box gridArea="right" pad="medium">
-              <Box round="small" border pad="small">
+              <Box round="small" border pad="medium">
                 <Form
                   autoComplete="on"
                   value={value}
@@ -180,7 +180,7 @@ const Home: FC = () => {
         </WidthWrapper>
       </Box>
 
-      <Box id="how-does-it-work" margin="medium">
+      <Box id="how-does-it-work">
         <WidthWrapper direction="column">
           <Heading level={2}>How does ShootRemote work?</Heading>
           <Grid
@@ -188,10 +188,10 @@ const Home: FC = () => {
             rows={rows}
             areas={areas}
             fill="horizontal"
-            gap="medium"
+            gap="large"
           >
             <Box gridArea="left">
-              <Paragraph>
+              <Paragraph fill>
                 ShootRemote works by connecting you to your camera through a
                 couple of devices. It first connects to you through your device,
                 wether it be a phone, tablet, or computer,
@@ -199,7 +199,7 @@ const Home: FC = () => {
                   &nbsp;ShootRemote is designed to work on any platform.
                 </Text>
               </Paragraph>
-              <Paragraph>
+              <Paragraph fill>
                 ShootRemote connects to your camera through the&nbsp;
                 <Text weight="bold">ShootRemote Adapter.</Text> Depending on the
                 camera, the ShootRemote Adapter may connect to it with a wire,
@@ -207,7 +207,7 @@ const Home: FC = () => {
               </Paragraph>
             </Box>
             <Box gridArea="right">
-              <Paragraph>
+              <Paragraph fill>
                 Your ShootRemote Adapter can connect to your device in several
                 ways:
               </Paragraph>

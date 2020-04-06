@@ -16,7 +16,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>ShootRemote | Control Your Camera Remotely</title>
           <meta
             name="description"
             content="Control your camera wirelessly with SmartRemote"

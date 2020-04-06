@@ -9,6 +9,8 @@ import {
   Nav,
   Anchor,
 } from "grommet";
+import Router from "next/router";
+
 import { Menu } from "grommet-icons";
 import { WidthWrapper } from "./WidthWrapper";
 import { SideNav } from "./SideNav";
@@ -29,11 +31,14 @@ export const Header: FC = () => {
       }}
     >
       <WidthWrapper align="center">
-        <Image src="/logo-color.svg" height={28} alt="ShootRemote logo" />
+        <Anchor href="/">
+          <Image src="/logo-color.svg" height={28} alt="ShootRemote logo" />
+        </Anchor>
+
         {!headerIsSmall && (
           <Nav direction="row" gap="medium">
-            <Anchor label="About" href="#what" />
-            <Anchor label="Contact" href="#sign-up" />
+            <Anchor label="About" href="/#what" />
+            <Anchor label="Contact" href="/#sign-up" />
           </Nav>
         )}
         {headerIsSmall && <SideNav />}
