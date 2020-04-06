@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import React, { FC, useContext, useEffect } from "react";
 import {
   Header as GrommetHeader,
   Box,
@@ -12,10 +12,14 @@ import {
 import { Menu } from "grommet-icons";
 import { WidthWrapper } from "./WidthWrapper";
 import { SideNav } from "./SideNav";
+import { initGA, logPageView } from "../helpers/googleAnalytics";
 
 export const Header: FC = () => {
   const size = useContext(ResponsiveContext);
   const headerIsSmall = ["small", "medium"].includes(size);
+
+  initGA();
+  logPageView();
 
   return (
     <GrommetHeader
