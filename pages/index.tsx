@@ -21,6 +21,7 @@ import { scroller } from "react-scroll";
 
 import { WidthWrapper } from "../components/WidthWrapper";
 import { encodeForm } from "../helpers/encodeForm";
+import { logEvent } from "../helpers/googleAnalytics";
 
 const Home: FC = () => {
   const size = useContext(ResponsiveContext);
@@ -57,11 +58,17 @@ const Home: FC = () => {
               <Button
                 label={<Text color="white">Join our Beta</Text>}
                 primary
-                onClick={() => scroller.scrollTo("sign-up", {})}
+                onClick={() => {
+                  logEvent("nav", "sign_up");
+                  scroller.scrollTo("sign-up", {});
+                }}
               />
               <Button
                 label="Learn More"
-                onClick={() => scroller.scrollTo("what", {})}
+                onClick={() => {
+                  logEvent("nav", "what_is_shootremote");
+                  scroller.scrollTo("what", {});
+                }}
               />
             </Box>
           </Box>
