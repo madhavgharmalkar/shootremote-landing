@@ -5,6 +5,7 @@ import { theme } from "../theme";
 import "../style.css";
 import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
+import Head from "next/head";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (

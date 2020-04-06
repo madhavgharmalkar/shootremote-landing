@@ -29,7 +29,7 @@ export const Header: FC = () => {
       }}
     >
       <WidthWrapper align="center">
-        <Image src="/logo-color.svg" height={28} />
+        <Image src="/logo-color.svg" height={28} alt="ShootRemote logo" />
         {!headerIsSmall && (
           <Nav direction="row" gap="medium">
             <Anchor label="About" />

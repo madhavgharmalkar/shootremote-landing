@@ -63,7 +63,11 @@ const Home: FC = () => {
             </Box>
           </Box>
           <Box gridArea="right">
-            <Image src="/videographer.svg" width="100%" />
+            <Image
+              src="/videographer.svg"
+              width="100%"
+              alt="man with film camera"
+            />
           </Box>
         </Grid>
       </WidthWrapper>
