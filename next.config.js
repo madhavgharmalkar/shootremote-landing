@@ -3,6 +3,9 @@ module.exports = {
   exportPathMap: function () {
     return {
       "/": { page: "/" },
+      filmmaking: { page: "/filmmaking" },
+      livestreaming: { page: "/livestreaming" },
+      aeiral: { page: "/aeiral" },
     };
   },
 };

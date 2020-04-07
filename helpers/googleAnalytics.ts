@@ -3,7 +3,6 @@ import ReactGA from "react-ga";
 import { useRouter } from "next/router";
 
 export const initGA = () => {
-  console.log("GA init");
   ReactGA.initialize(GA_TRACKING_ID);
 };
 export const logPageView = () => {

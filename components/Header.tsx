@@ -12,7 +12,7 @@ import {
 import Router from "next/router";
 
 import { Menu } from "grommet-icons";
-import { WidthWrapper } from "./WidthWrapper";
+import { Layout } from "./Layout";
 import { SideNav } from "./SideNav";
 import { initGA, logPageView } from "../helpers/googleAnalytics";
 
@@ -24,13 +24,8 @@ export const Header: FC = () => {
   logPageView();
 
   return (
-    <GrommetHeader
-      pad={{
-        horizontal: "large",
-        vertical: size === "small" ? "large" : "small",
-      }}
-    >
-      <WidthWrapper align="center">
+    <GrommetHeader>
+      <Layout align="center" direction="row" justify="between">
         <Anchor href="/">
           <Image src="/logo-color.svg" height={28} alt="ShootRemote logo" />
         </Anchor>
@@ -42,7 +37,7 @@ export const Header: FC = () => {
           </Nav>
         )}
         {headerIsSmall && <SideNav />}
-      </WidthWrapper>
+      </Layout>
     </GrommetHeader>
   );
 };

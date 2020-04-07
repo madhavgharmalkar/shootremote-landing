@@ -16,10 +16,12 @@ import {
   Diagram,
   Stack,
   List,
+  DropButton,
+  Nav,
+  Anchor,
 } from "grommet";
 import { scroller } from "react-scroll";
 
-import { WidthWrapper } from "../components/WidthWrapper";
 import { encodeForm } from "../helpers/encodeForm";
 import { logEvent } from "../helpers/googleAnalytics";
 
@@ -34,28 +36,42 @@ const Home: FC = () => {
 
   const [value, setValue] = useState({});
   return (
-    <Box pad={{ horizontal: "large" }}>
+    <Box>
       <Head>
-        <title>ShootRemote | Control Your Camera Remotely</title>
+        <title>ShootRemote | Save time. Create more.</title>
       </Head>
-      <WidthWrapper>
+      <Box fill="horizontal">
         <Grid
-          fill
           rows={rows}
           columns={columns}
           areas={areasReverse}
-          align="center"
           gap="medium"
+          fill="horizontal"
         >
           <Box gridArea="left">
-            <Heading textAlign="start" margin={{ vertical: "small" }}>
-              Don't waste time playing with settings
+            <Heading margin={{ vertical: "small" }}>
+              Save time. Create more.
             </Heading>
-            <Heading level="3">
-              ShootRemote lets you control your camera programatically
-            </Heading>
-            <Box direction="row" gap="small" fill justify="center">
-              <Button
+            <Box justify="around">
+              <Heading
+                level="3"
+                margin={{ vertical: "small" }}
+                textAlign="center"
+              >
+                Select your industry
+              </Heading>
+              <Nav direction="row" wrap justify="center">
+                <Anchor href="/livestreaming" margin={{ vertical: "small" }}>
+                  <Button label="Live Streaming" />
+                </Anchor>
+                <Anchor href="/aerial" margin={{ vertical: "small" }}>
+                  <Button label="Aerial Services" />
+                </Anchor>
+                <Anchor href="/filmmaking" margin={{ vertical: "small" }}>
+                  <Button label="Filmmaking" />
+                </Anchor>
+              </Nav>
+              {/* <Button
                 label={<Text color="white">Join our Beta</Text>}
                 primary
                 onClick={() => {
@@ -69,7 +85,7 @@ const Home: FC = () => {
                   logEvent("nav", "what_is_shootremote");
                   scroller.scrollTo("what", {});
                 }}
-              />
+              /> */}
             </Box>
           </Box>
           <Box gridArea="right">
@@ -80,91 +96,86 @@ const Home: FC = () => {
             />
           </Box>
         </Grid>
-      </WidthWrapper>
-
-      <Box id="what" margin="medium">
-        <WidthWrapper direction="column">
-          <Heading level="2">What is ShootRemote?</Heading>
-          <Grid
-            rows={rows}
-            columns={columns}
-            areas={areas}
-            gap="large"
-            align="center"
-          >
-            <Box gridArea="left">
-              <Text>
-                ShootRemote is a tool designed to let you create productively.
-                It was created to allow creators to quickly check and change
-                their DSLR, mirrorless, and film camera settings whithout having
-                to be interuppted. ShootRemote is an excellent tool for:
-              </Text>
-              <Image src="/camera.svg" height="100px" />
-            </Box>
-            <Box gridArea="right">
-              <List
-                data={[
-                  "Multi-camera broadcasting",
-                  "Drone Photography/Videography",
-                  "Remote Camera Work",
-                  "...and much more!",
-                ]}
-              />
-            </Box>
-          </Grid>
-        </WidthWrapper>
+      </Box>
+      <Box id="what" margin="medium" direction="column">
+        <Heading level="2">What is ShootRemote?</Heading>
+        <Grid
+          rows={rows}
+          columns={columns}
+          areas={areas}
+          gap="large"
+          align="center"
+        >
+          <Box gridArea="left">
+            <Text>
+              ShootRemote is a tool designed to let you create productively. It
+              was created to allow creators to quickly check and change their
+              DSLR, mirrorless, and film camera settings whithout having to be
+              interuppted. ShootRemote is an excellent tool for:
+            </Text>
+            <Image src="/camera.svg" height="100px" />
+          </Box>
+          <Box gridArea="right">
+            <List
+              data={[
+                "Multi-camera broadcasting",
+                "Drone Photography/Videography",
+                "Remote Camera Work",
+                "...and much more!",
+              ]}
+            />
+          </Box>
+        </Grid>
       </Box>
 
       <Box id="sign-up" margin="medium">
-        <WidthWrapper>
-          <Grid
-            fill
-            rows={rows}
-            columns={columns}
-            areas={areas}
-            gap="medium"
-            align="center"
-          >
-            <Box gridArea="left">
-              <Heading level="3">Join our Beta!</Heading>
-              <Text>
-                ShootRemote is currently in beta, and we're adding new customers
-                every day. If you're interested, sign up and we'll get back to
-                you soon!
-              </Text>
-            </Box>
-            <Box gridArea="right" pad="medium">
-              <Box round="small" border pad="medium">
-                <Form
-                  autoComplete="on"
-                  value={value}
-                  onChange={setValue}
-                  data-netlify="true"
-                  name="beta-signup"
-                  onSubmit={(event: any) => {
-                    const values = event.value;
-                    fetch("/", {
-                      method: "POST",
-                      headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                      },
-                      body: encodeForm({
-                        "form-name": "beta-signup",
-                        ...values,
-                      }),
-                    })
-                      .then(() => alert("Success!"))
-                      .catch((error) => alert(error));
-                    event.preventDefault();
-                  }}
-                >
-                  <FormField name="name" required>
-                    <TextInput placeholder="Name" name="name" />
-                  </FormField>
-                  <FormField name="name" required>
-                    <TextInput type="email" placeholder="Email" name="email" />
-                  </FormField>
-                  {/* <FormField name="camera">
+        <Grid
+          rows={rows}
+          columns={columns}
+          areas={areas}
+          gap="medium"
+          align="center"
+        >
+          <Box gridArea="left">
+            <Heading level="3">Join our Beta!</Heading>
+            <Text>
+              ShootRemote is currently in beta, and we're adding new customers
+              every day. If you're interested, sign up and we'll get back to you
+              soon!
+            </Text>
+          </Box>
+          <Box gridArea="right" pad="medium">
+            <Box round="small" border pad="medium">
+              <Form
+                autoComplete="on"
+                value={value}
+                onChange={setValue}
+                data-netlify="true"
+                name="beta-signup"
+                onSubmit={(event: any) => {
+                  const values = event.value;
+                  fetch("/", {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: encodeForm({
+                      "form-name": "beta-signup",
+                      ...values,
+                    }),
+                  })
+                    .then(() => alert("Success!"))
+                    .catch((error) => alert(error));
+                  event.preventDefault();
+                }}
+              >
+                <FormField name="name" required>
+                  <TextInput placeholder="Name" name="name" />
+                </FormField>
+                <FormField name="name" required>
+                  <TextInput type="email" placeholder="Email" name="email" />
+                </FormField>
+                {/* <FormField name="camera">
                     <Select
                       placeholder="Camera Brand"
                       name="camera"
@@ -179,62 +190,59 @@ const Home: FC = () => {
                     />
                   </FormField> */}
 
-                  <Button label="Submit" type="submit" />
-                </Form>
-              </Box>
+                <Button label="Submit" type="submit" />
+              </Form>
             </Box>
-          </Grid>
-        </WidthWrapper>
+          </Box>
+        </Grid>
       </Box>
 
-      <Box id="how-does-it-work">
-        <WidthWrapper direction="column">
-          <Heading level={2}>How does ShootRemote work?</Heading>
-          <Grid
-            columns={columns}
-            rows={rows}
-            areas={areas}
-            fill="horizontal"
-            gap="large"
-          >
-            <Box gridArea="left">
-              <Paragraph fill>
-                ShootRemote works by connecting you to your camera through a
-                couple of devices. It first connects to you through your device,
-                wether it be a phone, tablet, or computer,
-                <Text weight="bold">
-                  &nbsp;ShootRemote is designed to work on any platform.
-                </Text>
-              </Paragraph>
-              <Paragraph fill>
-                ShootRemote connects to your camera through the&nbsp;
-                <Text weight="bold">ShootRemote Adapter.</Text> Depending on the
-                camera, the ShootRemote Adapter may connect to it with a wire,
-                or wirelessly
-              </Paragraph>
-            </Box>
-            <Box gridArea="right">
-              <Paragraph fill>
-                Your ShootRemote Adapter can connect to your device in several
-                ways:
-              </Paragraph>
-              <ul>
-                <li>
-                  You can connect directly and wirelessly to the ShootRemote
-                  Adapter from any device
-                </li>
-                <li>
-                  You can connect to multiple ShootRemote Adapters by connecting
-                  through a wireless network (similar to how your home WiFi
-                  works)
-                </li>
-                <li>
-                  You can connect to multiple ShootRemote Adapters over long
-                  distances (about 1 mile) with the ShootRemote Station.
-                </li>
-              </ul>
-            </Box>
-            {/* <Box gridArea="right">
+      <Box id="how-does-it-work" direction="column">
+        <Heading level={2}>How does ShootRemote work?</Heading>
+        <Grid
+          columns={columns}
+          rows={rows}
+          areas={areas}
+          fill="horizontal"
+          gap="large"
+        >
+          <Box gridArea="left">
+            <Paragraph fill>
+              ShootRemote works by connecting you to your camera through a
+              couple of devices. It first connects to you through your device,
+              wether it be a phone, tablet, or computer,
+              <Text weight="bold">
+                &nbsp;ShootRemote is designed to work on any platform.
+              </Text>
+            </Paragraph>
+            <Paragraph fill>
+              ShootRemote connects to your camera through the&nbsp;
+              <Text weight="bold">ShootRemote Adapter.</Text> Depending on the
+              camera, the ShootRemote Adapter may connect to it with a wire, or
+              wirelessly
+            </Paragraph>
+          </Box>
+          <Box gridArea="right">
+            <Paragraph fill>
+              Your ShootRemote Adapter can connect to your device in several
+              ways:
+            </Paragraph>
+            <ul>
+              <li>
+                You can connect directly and wirelessly to the ShootRemote
+                Adapter from any device
+              </li>
+              <li>
+                You can connect to multiple ShootRemote Adapters by connecting
+                through a wireless network (similar to how your home WiFi works)
+              </li>
+              <li>
+                You can connect to multiple ShootRemote Adapters over long
+                distances (about 1 mile) with the ShootRemote Station.
+              </li>
+            </ul>
+          </Box>
+          {/* <Box gridArea="right">
               <Stack guidingChild={1}>
                 <Diagram
                   connections={[
@@ -275,8 +283,7 @@ const Home: FC = () => {
               </Stack>
             </Box>
            */}
-          </Grid>
-        </WidthWrapper>
+        </Grid>
       </Box>
     </Box>
   );
