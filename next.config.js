@@ -5,7 +5,7 @@ module.exports = {
       "/": { page: "/" },
       filmmaking: { page: "/filmmaking" },
       livestreaming: { page: "/livestreaming" },
-      aeiral: { page: "/aeiral" },
+      aerial: { page: "/aerial" },
     };
   },
 };
